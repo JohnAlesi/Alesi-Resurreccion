@@ -13,8 +13,8 @@ const About = () => {
   };
   return (
     <div className="flex flex-col items-start">
-      <code className="text-sm md:text-4xl">John Alesi Resurreccion</code>
-      <code onClick={toggleDeveloper} className="cursor-pointer text-xs md:text-base font-bold">
+      <code className="text-2xl md:text-4xl">John Alesi Resurreccion</code>
+      <code onClick={toggleDeveloper} className="cursor-pointer text-[11.5px] md:text-base font-bold">
         Developer: {"{"}
         {showDeveloper ? (
           <div className="flex flex-col ml-4 mt-2 font-normal">
@@ -28,7 +28,7 @@ const About = () => {
         )}
         {"},"}
       </code>
-      <code onClick={toggelInfo} className="cursor-pointer text-xs md:text-base font-bold">
+      <code onClick={toggelInfo} className="cursor-pointer text-[11.5px] md:text-base font-bold">
         Info: {"{"}
         {showInfo ? (
           <div className="flex flex-col ml-4 mt-2 font-normal">

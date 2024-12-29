@@ -17,7 +17,7 @@ const Home = () => {
           </div>
         </main>
         {/* Footer at the bottom */}
-        <footer className="ml-8 text-xs">
+        <footer className="mr-8 text-xs text-end">
           <code>© John Alesi</code>
         </footer>
       </div>

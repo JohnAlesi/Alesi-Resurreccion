@@ -36,7 +36,7 @@ const Nav = () => {
       <div className="md:hidden flex justify-end">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="hover:text-yellow-400 focus:outline-none"
+          className="focus:outline-none"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -59,13 +59,13 @@ const Nav = () => {
       <ul
         className={`${
           isOpen ? "block" : "hidden"
-        } absolute md:static w-60 md:w-auto bg-transparent md:bg-transparent md:flex md:flex-row gap-6 justify-end text-lg`}
+        } absolute md:static w-full flex flex-col p-12 md:p-0 md:w-auto bg-white rounded-2xl left-[5px] md:bg-transparent md:flex md:flex-row gap-6 justify-end text-lg`}
       >
         {navItems.map((item) => (
           <li key={item.label} className="text-center">
             <code
-              onClick={() => handleClick(item.component)} // Close menu on click
-              className="cursor-pointer"
+              onClick={() => handleClick(item.component)}
+              className="cursor-pointer hover:underline hover:font-bold"
             >
               {item.label}
             </code>
