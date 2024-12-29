@@ -19,7 +19,9 @@ const Experience = () => {
         <code className="font-semibold">
           -Technological Institute of the Philippines
         </code>
+        <code className="italic ml-3">2018-2021</code>
         <code className="font-semibold">-Zuitt Coding Bootcamp</code>
+        <code className="italic ml-3">2021-2022</code>
       </div>
     </div>
   );
