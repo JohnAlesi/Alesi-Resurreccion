@@ -62,7 +62,7 @@ const Nav = () => {
         } absolute md:static w-60 md:w-auto bg-transparent md:bg-transparent md:flex md:flex-row gap-6 justify-end text-lg`}
       >
         {navItems.map((item) => (
-          <li key={item.label} className="text-end">
+          <li key={item.label} className="text-center">
             <code
               onClick={() => handleClick(item.component)} // Close menu on click
               className="cursor-pointer"

@@ -8,10 +8,10 @@ const Home = () => {
       <div className="flex flex-col min-h-screen">
         <main className="flex-grow p-8 mx-8 mt-8 border">
           <div className="grid grid-cols-5">
-            <div>
+            <div className="col-span-2">
               <About />
             </div>
-            <div className="col-span-4">
+            <div className="col-span-3">
               <Nav />
             </div>
           </div>

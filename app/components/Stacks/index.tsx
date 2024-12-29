@@ -1,6 +1,6 @@
 const Stack = () => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-7 gap-y-4 justify-items-end">
+    <div className="grid grid-cols-2 md:grid-cols-7 gap-y-4 justify-items-end mt-14">
       <i className="devicon-html5-plain text-3xl md:text-6xl"></i>
       <i className="devicon-css3-plain text-3xl md:text-6xl"></i>
       <i className="devicon-bootstrap-plain text-3xl md:text-6xl"></i>
