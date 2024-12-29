@@ -59,7 +59,7 @@ const Nav = () => {
       <ul
         className={`${
           isOpen ? "block" : "hidden"
-        } absolute md:static w-full flex flex-col p-12 md:p-0 md:w-auto bg-white rounded-2xl left-[5px] md:bg-transparent md:flex md:flex-row gap-6 justify-end text-lg`}
+        } absolute md:static w-[365px] flex flex-col p-8 md:p-0 md:w-auto bg-white text-[#7A7A7A] md:text-white rounded-2xl left-[33px] md:bg-transparent md:flex md:flex-row gap-6 justify-end text-lg`}
       >
         {navItems.map((item) => (
           <li key={item.label} className="text-center">

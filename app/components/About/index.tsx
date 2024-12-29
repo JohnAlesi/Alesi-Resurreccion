@@ -1,53 +1,101 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 
 const About = () => {
   const [showDeveloper, setShowDeveloper] = useState(false);
-  const [showInfo, setShowInfo] = useState<boolean>(false)
+  const [showInfo, setShowInfo] = useState(false);
+  const [typedDeveloperItems, setTypedDeveloperItems] = useState<string[]>([]);
+  const [typedInfoItems, setTypedInfoItems] = useState<string[]>([]);
+
+  const developerItems = useMemo(
+    () => ["e-Commerce,", "Blockchain,", "Project Management,", "Blog,", "Bots,", "Real Estate"],
+    []
+  );
+
+  const infoItems = useMemo(
+    () => ["Year: 1998,", "Location: Philippines,", "Gender: Male"],
+    []
+  );
+
+  useEffect(() => {
+    if (showDeveloper) {
+      let index = -1;
+      setTypedDeveloperItems([]);
+      const interval = setInterval(() => {
+        setTypedDeveloperItems((prev) => [...prev, developerItems[index]]);
+        index++;
+        if (index === developerItems.length) {
+          clearInterval(interval);
+        }
+      }, 200);
+      return () => clearInterval(interval);
+    }
+  }, [developerItems, showDeveloper]);
+
+  useEffect(() => {
+    if (showInfo) {
+      let index = -1;
+      setTypedInfoItems([]);
+      const interval = setInterval(() => {
+        setTypedInfoItems((prev) => [...prev, infoItems[index]]);
+        index++;
+        if (index === infoItems.length) {
+          clearInterval(interval);
+        }
+      }, 200);
+      return () => clearInterval(interval);
+    }
+  }, [infoItems, showInfo]);
 
   const toggleDeveloper = () => {
     setShowDeveloper(!showDeveloper);
   };
-  const toggelInfo = () => {
+
+  const toggleInfo = () => {
     setShowInfo(!showInfo);
   };
+
   return (
     <div className="flex flex-col items-start">
       <code className="text-2xl md:text-4xl">John Alesi Resurreccion</code>
-      <code onClick={toggleDeveloper} className="cursor-pointer text-[11.5px] md:text-base font-bold">
+
+      {/* Developer Section */}
+      <code
+        onClick={toggleDeveloper}
+        className="cursor-pointer text-[11.5px] md:text-base font-bold"
+      >
         Developer: {"{"}
         {showDeveloper ? (
-          <div className="flex flex-col ml-4 mt-2 font-normal">
-            <code>Blog,</code>
-            <code>e-Commerce,</code>
-            <code>Blockchain,</code>
-            <code>Project Management</code>
+          <div className="flex flex-col ml-4 font-normal">
+            {typedDeveloperItems.map((item, index) => (
+              <code key={index} className="typing-animation">
+                {item}
+              </code>
+            ))}
           </div>
         ) : (
           "..."
         )}
         {"},"}
       </code>
-      <code onClick={toggelInfo} className="cursor-pointer text-[11.5px] md:text-base font-bold">
+      <code
+        onClick={toggleInfo}
+        className="cursor-pointer text-[11.5px] md:text-base font-bold"
+      >
         Info: {"{"}
         {showInfo ? (
-          <div className="flex flex-col ml-4 mt-2 font-normal">
-            <code>Year: 1998,</code>
-            <code>Location: Philippines,</code>
-            <code>Gender: Male</code>
+          <div className="flex flex-col ml-4 font-normal">
+            {typedInfoItems.map((item, index) => (
+              <code key={index} className="typing-animation">
+                {item}
+              </code>
+            ))}
           </div>
         ) : (
           "..."
         )}
         {"},"}
       </code>
-      {/* <code className="mt-2">
-        <h3>I believe that web development</h3>
-        <h3>is one of the keys to progress</h3>
-        <h3>and that being a developer</h3>
-        <h3>cannot be rendered obsolete simply</h3>
-        <h3>by Artificial Intelligence.</h3>
-      </code> */}
     </div>
   );
 };
