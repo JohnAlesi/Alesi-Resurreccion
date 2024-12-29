@@ -33,5 +33,5 @@ body {
   overflow: hidden;
   white-space: nowrap;
   display: inline-block;
-  animation: typing 0.5s steps(20, end) forwards; /* Adjust speed and steps */
+  animation: typing 0.5s steps(20, end) forwards;
 }

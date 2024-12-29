@@ -8,12 +8,12 @@ const About = () => {
   const [typedInfoItems, setTypedInfoItems] = useState<string[]>([]);
 
   const developerItems = useMemo(
-    () => ["e-Commerce,", "Blockchain,", "Project Management,", "Blog,", "Bots,", "Real Estate"],
+    () => ["e-Commerce,", "Blockchain,", "Project Mgmt.,", "Blog,", "Bots,", "Real Estate"],
     []
   );
 
   const infoItems = useMemo(
-    () => ["Year: 1998,", "Location: Philippines,", "Gender: Male"],
+    () => ["Year: 1998,", "Location: .ph🇵🇭,", "Gender: Male"],
     []
   );
 
@@ -66,7 +66,7 @@ const About = () => {
       >
         Developer: {"{"}
         {showDeveloper ? (
-          <div className="flex flex-col ml-4 font-normal">
+          <div className="flex flex-col ml-1 md:ml-4 font-normal">
             {typedDeveloperItems.map((item, index) => (
               <code key={index} className="typing-animation">
                 {item}
@@ -84,7 +84,7 @@ const About = () => {
       >
         Info: {"{"}
         {showInfo ? (
-          <div className="flex flex-col ml-4 font-normal">
+          <div className="flex flex-col ml-1 md:ml-4 font-normal">
             {typedInfoItems.map((item, index) => (
               <code key={index} className="typing-animation">
                 {item}

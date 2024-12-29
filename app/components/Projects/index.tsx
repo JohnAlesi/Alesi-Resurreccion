@@ -5,7 +5,7 @@ const Projects = () => {
   return (
     <div className="text-start flex flex-col">
       <code className="underline font-extrabold mt-8">Projects:</code>
-      <div className="overflow-y-auto max-h-[75vh] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-200">
+      <div className="overflow-y-auto max-h-[75vh] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-200 mt-8">
         {projectList.map((project) => (
           <div key={project.id}>
             {/* Title */}
