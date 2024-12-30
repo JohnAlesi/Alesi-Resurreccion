@@ -57,7 +57,7 @@ const About = () => {
 
   const handleDownloadResume = () => {
     const link = document.createElement("a");
-    link.href = "/resume.pdf"; // Ensure the file is in the `public` folder
+    link.href = "/resume.pdf";
     link.download = "JohnAlesiResurreccion_Resume.pdf";
     link.click();
   };
