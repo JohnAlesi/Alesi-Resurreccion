@@ -11,7 +11,18 @@ const Nav = () => {
   const [activeComponent, setActiveComponent] = useState<string>("");
 
   const handleClick = (component: string) => {
-    setActiveComponent(component); // Set the active component
+    if (component === "Download") {
+      const link = document.createElement("a");
+      link.href = "/resume.pdf";
+      link.download = "JohnAlesiResurreccion_Resume.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      return;
+    }
+
+    // Set active component for other menu items
+    setActiveComponent(component);
     setIsOpen(false); // Close the menu
   };
 
