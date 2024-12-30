@@ -8,10 +8,10 @@ export const projectList = [
   },
   {
     id: 2,
-    title: "Catnip",
+    title: "KiffieHypurr",
     date: "Dec, 2024",
     description: "Blockchain Blog | Design & Dev.",
-    src: "https://catniphypurr.vercel.app/"
+    src: "https://kiffiehypurr.io/"
   },
   {
     id: 3,
