@@ -11,17 +11,8 @@ const Nav = () => {
   const [activeComponent, setActiveComponent] = useState<string>("");
 
   const handleClick = (component: string) => {
-    if (component === "Download") {
-      const link = document.createElement("a");
-      link.href = "/resume.pdf";
-      link.download = "JohnAlesiResurreccion_Resume.pdf";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      return;
-    }
-    setActiveComponent(component);
-    setIsOpen(false);
+    setActiveComponent(component); // Set the active component
+    setIsOpen(false); // Close the menu
   };
 
   const renderComponent = (component: string) => {
@@ -41,6 +32,7 @@ const Nav = () => {
 
   return (
     <nav>
+      {/* Hamburger Menu */}
       <div className="md:hidden flex justify-end">
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -63,13 +55,14 @@ const Nav = () => {
         </button>
       </div>
 
+      {/* Navigation Items */}
       <ul
         className={`${
           isOpen ? "block" : "hidden"
-        } absolute md:static w-[365px] flex flex-col p-8 md:p-0 md:w-auto bg-white text-[#7A7A7A] md:text-white rounded-2xl left-[33px] md:bg-transparent md:flex md:flex-row gap-6 justify-end text-lg`}
+        } absolute md:static w-[300px] flex flex-col p-8 md:p-0 md:w-auto rounded-2xl left-[45px] md:flex md:flex-row gap-6 justify-end text-lg bg-white md:bg-transparent`}
       >
         {navItems.map((item) => (
-          <li key={item.key} className="text-center">
+          <li key={item.label} className="text-center">
             <code
               onClick={() => handleClick(item.component)}
               className="cursor-pointer hover:underline hover:font-bold"
