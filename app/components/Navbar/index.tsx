@@ -20,10 +20,8 @@ const Nav = () => {
       document.body.removeChild(link);
       return;
     }
-
-    // Set active component for other menu items
     setActiveComponent(component);
-    setIsOpen(false); // Close the menu
+    setIsOpen(false);
   };
 
   const renderComponent = (component: string) => {
@@ -43,7 +41,6 @@ const Nav = () => {
 
   return (
     <nav>
-      {/* Hamburger Menu */}
       <div className="md:hidden flex justify-end">
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -66,14 +63,13 @@ const Nav = () => {
         </button>
       </div>
 
-      {/* Navigation Items */}
       <ul
         className={`${
           isOpen ? "block" : "hidden"
         } absolute md:static w-[365px] flex flex-col p-8 md:p-0 md:w-auto bg-white text-[#7A7A7A] md:text-white rounded-2xl left-[33px] md:bg-transparent md:flex md:flex-row gap-6 justify-end text-lg`}
       >
         {navItems.map((item) => (
-          <li key={item.label} className="text-center">
+          <li key={item.key} className="text-center">
             <code
               onClick={() => handleClick(item.component)}
               className="cursor-pointer hover:underline hover:font-bold"
@@ -83,8 +79,6 @@ const Nav = () => {
           </li>
         ))}
       </ul>
-
-      {/* Render Active Component */}
       <div className="mt-4">{renderComponent(activeComponent)}</div>
     </nav>
   );
